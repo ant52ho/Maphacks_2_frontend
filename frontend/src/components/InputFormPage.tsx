@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Component, useState } from 'react';
+import { Component, useState, useEffect} from 'react';
+import axios from 'axios'
 
 function InputFormPage() {
     const [age, setAge] = useState<String>();
@@ -8,11 +9,25 @@ function InputFormPage() {
     const [projectNames, setprojectNames] = useState<String>("comma seperated please");
     const [email, setemail] = useState<String>();
     const [tel, settel] = useState<String>();
+    const [getMessage, setGetMessage] = useState({} as any)
 
     const submitButton = () =>{
         alert(desc)
+
+        const userData = {
+            description: desc
+        };
+
         //make api call
         //redirect to generated page
+
+        axios.post('http://localhost:5000/flask/hello', userData).then(response => {
+            console.log("POST SUCCESS", response)
+          }).catch(error => {
+            console.log("ERROR")
+            console.log(error.response.data.message)
+          })
+
     }
 
     return (

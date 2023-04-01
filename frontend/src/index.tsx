@@ -20,6 +20,7 @@ import AppHeader from './result_site/src/components/shared/AppHeader';
 import './result_site/src/css/App.css';
 import UseScrollToTop from './result_site/src/hooks/useScrollToTop';
 import './result_site/src/css/main.css';
+import InputFormPage from './components/InputFormPage';
 
 // image imports
 import profileImage from './result_site/src/images/profile.jpeg'
@@ -31,7 +32,6 @@ const Home = lazy(() => import('./result_site/src/pages/Home'));
 const Projects = lazy(() => import('./result_site/src/pages/Projects'));
 const ProjectSingle = lazy(() => import('./result_site/src/pages/ProjectSingle.jsx'));
 
-import InputFormPage from './components/InputFormPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -62,12 +62,12 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/helloworld",
-        element: <div>Hello World</div>,
-      },
-      {
         path: '/page',
         element: <App />
+      },
+      {
+        path: "/form",
+        element: <InputFormPage />
       },
       {
         path: "/home",
@@ -81,14 +81,6 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />
       },
-      {
-        path: "/projects",
-        element: <Projects />
-      },
-      {
-        path: "projects/single-project",
-        element: <ProjectSingle />
-      }
     ]
   },
   {
