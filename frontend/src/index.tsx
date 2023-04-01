@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import LandingPage from './components/LandingPage';
 // import ResultPage from './result_site/src/App'
 import {
   createBrowserRouter,
@@ -91,7 +92,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <App />,
+    element: <LandingPage />,
   },
 ]);
 
