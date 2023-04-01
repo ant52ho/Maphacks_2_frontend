@@ -4,7 +4,7 @@ import AboutClients from '../components/about/AboutClients';
 import { AboutMeProvider } from '../context/AboutMeContext';
 import { motion } from 'framer-motion';
 
-const About = () => {
+const About = ({bioImage="Hello", bioText="World"}) => {
 	return (
 		<AboutMeProvider>
 			<motion.div
@@ -13,26 +13,26 @@ const About = () => {
 				exit={{ opacity: 0 }}
 				className="container mx-auto"
 			>
-				<AboutMeBio />
+				<AboutMeBio image={bioImage} text={bioText}/>
 			</motion.div>
 
 			{/** Counter without paddings */}
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
 			>
 				<AboutCounter />
-			</motion.div>
+			</motion.div> */}
 
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
 				className="container mx-auto"
 			>
 				<AboutClients />
-			</motion.div>
+			</motion.div> */}
 		</AboutMeProvider>
 	);
 };
