@@ -66,10 +66,6 @@ const router = createBrowserRouter([
         element: <App />
       },
       {
-        path: "/form",
-        element: <InputFormPage />
-      },
-      {
         path: "/home",
         element: <Home />
       },
@@ -86,6 +82,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
+  },
+  {
+    path: "/form",
+    element: <InputFormPage />
   },
 ]);
 
