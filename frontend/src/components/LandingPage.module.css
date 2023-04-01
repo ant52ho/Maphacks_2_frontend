@@ -1,0 +1,114 @@
+.pictureDiv {
+    height: 100%;
+    width: 55%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    height: 100%;
+    left: -20%;
+    opacity: 50%;
+}
+
+.textDiv {
+    background-color: #2C3333;
+    height: 100%;
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.textSection {
+    width: 100%;
+    height: 100%;
+
+    padding-right: 10%;
+    padding-left: 10%;
+
+    max-width: fit-content;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100.02%;
+    /* or 64px */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+
+    color: #CBE4DE;
+}
+
+.tryMe {
+    width: 100%;
+    height: 100%;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 100.02%;
+    /* or 64px */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration-line: underline;
+
+    color: #CBE4DE;
+}
+
+.pageDiv {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #2C3333;
+    overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    width: 940px;
+    height: 142px;
+    right: 10%;
+    top: 5%;
+    transform: translateY(-50%);
+
+    font-family: 'Dhyana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 155px;
+    text-align: center;
+
+    color: #CBE4DE;
+}
+
+.glow {
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
