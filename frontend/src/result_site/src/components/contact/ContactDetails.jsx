@@ -1,24 +1,29 @@
 import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 
-const contacts = [
-	{
-		id: 1,
-		name: 'Your Address, Your City, Your Country',
-		icon: <FiMapPin />,
-	},
-	{
-		id: 2,
-		name: 'email@domain.com',
-		icon: <FiMail />,
-	},
-	{
-		id: 3,
-		name: '555 8888 888',
-		icon: <FiPhone />,
-	},
-];
+const ContactDetails = (props) => {
 
-const ContactDetails = () => {
+	const location = props.location
+	const email = props.email
+	const phone = props.phone
+
+	const contacts = [
+		{
+			id: 1,
+			name: location,
+			icon: <FiMapPin />,
+		},
+		{
+			id: 2,
+			name: email,
+			icon: <FiMail />,
+		},
+		{
+			id: 3,
+			name: phone,
+			icon: <FiPhone />,
+		},
+	];
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="text-left max-w-xl px-6">
