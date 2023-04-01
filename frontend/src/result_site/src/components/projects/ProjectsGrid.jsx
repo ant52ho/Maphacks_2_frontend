@@ -3,10 +3,12 @@ import { FiSearch } from 'react-icons/fi';
 import ProjectSingle from './ProjectSingle';
 import { ProjectsContext } from '../../context/ProjectsContext';
 import ProjectsFilter from './ProjectsFilter';
+import WebImage2 from '../../images/web-project-2.jpg';
+import MobileImage2 from '../../images/mobile-project-2.jpg';
+import UIImage1 from '../../images/ui-project-1.jpg';	
 
-const ProjectsGrid = () => {
+const ProjectsGrid = (props) => {
 	const {
-		projects,
 		searchProject,
 		setSearchProject,
 		searchProjectsByTitle,
@@ -14,6 +16,28 @@ const ProjectsGrid = () => {
 		setSelectProject,
 		selectProjectsByCategory,
 	} = useContext(ProjectsContext);
+
+	const projects = [
+		{
+			id: 1,
+			title: 'Ket',
+			category: 'Web Application',
+			img: WebImage2,
+		},
+		{
+			id: 2,
+			title: 'Phoenix Digital Agency',
+			category: 'Mobile Application',
+			img: MobileImage2,
+		},
+		{
+			id: 3,
+			title: 'Project Management UI',
+			category: 'UI/UX Design',
+			img: UIImage1,
+		},
+	];
+	
 
 	return (
 		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
