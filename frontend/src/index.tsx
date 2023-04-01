@@ -31,6 +31,7 @@ const Home = lazy(() => import('./result_site/src/pages/Home'));
 const Projects = lazy(() => import('./result_site/src/pages/Projects'));
 const ProjectSingle = lazy(() => import('./result_site/src/pages/ProjectSingle.jsx'));
 
+import InputFormPage from './components/InputFormPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
