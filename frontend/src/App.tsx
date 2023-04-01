@@ -21,7 +21,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>React + Flask Tutorial</p>
         <div>{getMessage.status === 200 ? 
-          <h3>{getMessage.data.message}</h3>
+          <div>
+            <h3>{getMessage.data.age}</h3>
+            <h3>{getMessage.data.name}</h3>
+            <h3>{getMessage.data.occupation}</h3>
+            <h3>{getMessage.data.aspiration}</h3>
+            <h3>{getMessage.data.summary}</h3>
+          </div>
           :
           <h3>LOADING</h3>}</div>
       </header>
