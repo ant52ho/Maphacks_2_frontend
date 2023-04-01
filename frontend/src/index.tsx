@@ -20,6 +20,10 @@ import './result_site/src/css/App.css';
 import UseScrollToTop from './result_site/src/hooks/useScrollToTop';
 import './result_site/src/css/main.css';
 
+// image imports
+import profileImage from './result_site/src/images/profile.jpeg'
+
+
 const About = lazy(() => import('./result_site/src/pages/AboutMe'));
 const Contact = lazy(() => import('./result_site/src/pages/Contact.jsx'));
 const Home = lazy(() => import('./result_site/src/pages/Home'));
@@ -69,7 +73,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />
+        element: <About bioImage={profileImage} bioText={"Hello World!"}/>
       },
       {
         path: "/contact",
