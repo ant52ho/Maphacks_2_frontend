@@ -15,7 +15,7 @@ const Contact = () => {
 			className="container mx-auto flex flex-col-reverse lg:flex-row py-5 lg:py-10 lg:mt-10"
 		>
 			<ContactForm />
-			<ContactDetails />
+			<ContactDetails location = "nowhere" email = "me@uwaterloo.ca" phone = "555-555-5555"/>
 		</motion.div>
 	);
 };

@@ -107,13 +107,13 @@ const AppHeader = () => {
 							: 'hidden'
 					}
 				>
-					<Link
+					{/* <Link
 						to="/projects"
 						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
 						aria-label="Projects"
 					>
 						Projects
-					</Link>
+					</Link> */}
 					<Link
 						to="/about"
 						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
@@ -128,7 +128,7 @@ const AppHeader = () => {
 					>
 						Contact
 					</Link>
-					<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+					{/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
 						<span
 							onClick={showHireMeModal}
 							className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
@@ -136,17 +136,17 @@ const AppHeader = () => {
 						>
 							<Button title="Hire Me" />
 						</span>
-					</div>
+					</div> */}
 				</div>
 
 				{/* Header links large screen */}
 				<div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
 					<Link
-						to="/projects"
+						to="/home"
 						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-						aria-label="Projects"
+						aria-label="Home"
 					>
-						Projects
+						Home
 					</Link>
 					<Link
 						to="/about"
@@ -166,7 +166,7 @@ const AppHeader = () => {
 
 				{/* Header right section buttons */}
 				<div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
-					<div className="hidden md:flex">
+					{/* <div className="hidden md:flex">
 						<span
 							onClick={showHireMeModal}
 							className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
@@ -174,7 +174,7 @@ const AppHeader = () => {
 						>
 							<Button title="Hire Me" />
 						</span>
-					</div>
+					</div> */}
 
 					{/* Theme switcher large screen */}
 					<div
@@ -191,7 +191,7 @@ const AppHeader = () => {
 				</div>
 			</div>
 			{/* Hire me modal */}
-			<div>
+			{/* <div>
 				{showModal ? (
 					<HireMeModal
 						onClose={showHireMeModal}
@@ -199,7 +199,7 @@ const AppHeader = () => {
 					/>
 				) : null}
 				{showModal ? showHireMeModal : null}
-			</div>
+			</div> */}
 		</motion.nav>
 	);
 };
