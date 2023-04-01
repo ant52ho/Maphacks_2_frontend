@@ -5,7 +5,7 @@ import style from "./LandingPage.module.css"
 import clsx from 'clsx';
 
 const title = "[your name here]"
-const description = "We use AI to generate your own personal portfolio. Just tell us all about you and we will improve your hiring changes three-fold!"
+const description = "We use AI to generate your own personal portfolio."
 const linkText = "Try for free"
 
 function LandingPage() {
