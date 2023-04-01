@@ -28,7 +28,7 @@ function App() {
             <h3>{getMessage.data.occupation}</h3>
             <h3>{getMessage.data.aspiration}</h3>
             <h3>{getMessage.data.summary}</h3>
-            <img src ="{getMessage.data.image}"></img>
+            <img src ="{getMessage.data.occupationImage}"></img>
           </div>
           :
           <h3>LOADING</h3>}</div>
