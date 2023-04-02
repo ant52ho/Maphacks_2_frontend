@@ -7,6 +7,9 @@ import WebImage2 from '../../images/web-project-2.jpg';
 import MobileImage2 from '../../images/mobile-project-2.jpg';
 import UIImage1 from '../../images/ui-project-1.jpg';
 import { useLocation } from 'react-router-dom';	
+import React from 'react';
+import { InfoContext } from '../../../..';
+
 
 const ProjectsGrid = (props) => {
 	const {
@@ -45,7 +48,9 @@ const ProjectsGrid = (props) => {
 	let projectNames = (info && info.projects) || (state && state.projects) || null
 	let projectImages = projectNames && (info && info.projectImages) || (state && state.projectImages) || null
 
-	let projects = projectNames && projectImages && projectNames.map(
+	console.log(projectNames, projectImages)
+
+	let projects = projectNames != null && projectImages != null && projectNames.map(
 		(name, index) => {
 			return {
 				id: index,
@@ -156,7 +161,7 @@ const ProjectsGrid = (props) => {
 								key={project.id}
 							/>
 					  ))
-					: projects.map((project) => (
+					: projects && projects.map((project) => (
 							<ProjectSingle
 								title={project.title}
 								category={project.category}
