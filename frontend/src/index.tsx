@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -94,8 +94,26 @@ const router = createBrowserRouter([
   },
 ]);
 
-root.render(
+export const InfoContext = React.createContext<InfoContextType>({info: {}, setInfo: () => {}})
+
+export type InfoContextType = {
+  info: Object,
+  setInfo: React.Dispatch<React.SetStateAction<Object>>
+}
+
+function EntireWebsite() {
+  const [info, setInfo] = useState<Object>({});
+  return ( 
+  <InfoContext.Provider value={{info: info, setInfo: setInfo}}>
     <RouterProvider router={router} />
+    </InfoContext.Provider>
+    );
+}
+
+
+
+root.render(
+  <EntireWebsite/>
 );
 
 // If you want to start measuring performance in your app, pass a function
