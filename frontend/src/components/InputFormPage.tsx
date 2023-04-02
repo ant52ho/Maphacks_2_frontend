@@ -20,6 +20,10 @@ function InputFormPage() {
         alert(desc)
 
         const userData = {
+            name: name,
+            email: email,
+            telephone: tel,
+            projects: projectNames,
             description: desc
         };
 
@@ -46,13 +50,13 @@ function InputFormPage() {
 
             <br/>
 
-            <input
+            {/* <input
             name="age"
             type="number"
             value={age?.toString()}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAge(e.target.value)} />
 
-            <br/>
+            <br/> */}
 
             <textarea name="desc"  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setDesc(e.target.value)}>
                 {desc}
