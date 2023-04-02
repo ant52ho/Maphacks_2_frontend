@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import LandingPage from "./components/LandingPage";
+import NewLandingPage from './components/newLandingPage';
 import InputFormPage from "./components/InputFormPage";
 import LandingPage2 from './components/LandingPage2';
 // import ResultPage from './result_site/src/App'
@@ -96,7 +97,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <LandingPage2 />,
+    element: <NewLandingPage />,
   },
 ]);
 
