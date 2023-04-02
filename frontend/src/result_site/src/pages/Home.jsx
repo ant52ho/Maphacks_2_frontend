@@ -3,8 +3,13 @@ import AppBanner from '../components/shared/AppBanner';
 import ProjectsGrid from '../components/projects/ProjectsGrid';
 import { ProjectsProvider } from '../context/ProjectsContext';
 import Button from '../components/reusable/Button';
+import { useLocation } from "react-router-dom"
 
 const Home = () => {
+
+	const { state } = useLocation(); // state is any or unknown
+	console.log(state)
+
 	return (
 		<div className="container mx-auto">
 			<AppBanner></AppBanner>
@@ -21,7 +26,7 @@ const Home = () => {
 				>
 					<Button title="More Projects" />
 				</Link>
-			</div> */}
+			</div> */}	
 		</div>
 	);
 };

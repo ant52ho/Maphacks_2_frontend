@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Component, useState, useEffect} from 'react';
 import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 
 function InputFormPage() {
     const [age, setAge] = useState<String>();
@@ -10,6 +11,7 @@ function InputFormPage() {
     const [email, setemail] = useState<String>();
     const [tel, settel] = useState<String>();
     const [getMessage, setGetMessage] = useState({} as any)
+    const navigate = useNavigate()
 
     const submitButton = () =>{
         alert(desc)
@@ -23,11 +25,10 @@ function InputFormPage() {
 
         axios.post('http://localhost:5000/flask/hello', userData).then(response => {
             console.log("POST SUCCESS", response)
+            navigate('/home', {state : response.data, replace : false})
           }).catch(error => {
             console.log("ERROR")
-            console.log(error.response.data.message)
           })
-
     }
 
     return (
