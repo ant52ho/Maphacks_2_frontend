@@ -42,11 +42,11 @@ const Layout = () => (
         <Outlet />
       </Suspense>
       <AppFooter 
-      // website={"yes"} 
-      // github={'yes'} 
-      // linkedin={'yes'} 
-      // youtube={'yes'} 
-      // twitter={"yes"}
+      website={"yes"} 
+      github={'yes'} 
+      linkedin={'yes'} 
+      youtube={'yes'} 
+      twitter={"yes"}
       />
       <UseScrollToTop />
     </div>
@@ -87,11 +87,11 @@ const router = createBrowserRouter([
         path: "projects/single-project",
         element: <ProjectSingle />,
       },
-      {
-        path: "/form",
-        element: <InputFormPage />,
-      },
     ],
+  },
+  {
+    path: "/form",
+    element: <InputFormPage />,
   },
   {
     path: "/",

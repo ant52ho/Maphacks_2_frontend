@@ -1,3 +1,5 @@
+/* eslint-disable react/no-direct-mutation-state */
+ 
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 import { InfoContext, InfoContextType } from '../index';
@@ -6,8 +8,6 @@ import { Component, useState, useEffect, useContext} from 'react';
 import { Typography, Grid, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import formSidePicture from "../pictures/formSidePicture.png";
-
-console.log(formSidePicture);
 
 const theme = createTheme({
   palette: {
@@ -36,7 +36,7 @@ function InputFormPage() {
     const [age, setAge] = useState<String>();
     const [name, setName] = useState<String>();
     const [desc, setDesc] = useState<String>();
-    const [projectNames, setprojectNames] = useState<String>("comma seperated please");
+    const [projectNames, setprojectNames] = useState<String>();
     const [email, setemail] = useState<String>();
     const [tel, settel] = useState<String>();
     const [getMessage, setGetMessage] = useState({} as any)
@@ -45,7 +45,6 @@ function InputFormPage() {
     const {info, setInfo} = useContext<InfoContextType>(InfoContext)
 
     const submitButton = () =>{
-        alert(desc)
 
         const userData = {
             name: name,
@@ -69,7 +68,7 @@ function InputFormPage() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginTop: "90px"}}>
         <div>
           <Typography
             variant="h2"
@@ -89,7 +88,7 @@ function InputFormPage() {
             style={{ marginLeft: "80px", marginTop: "30px" }}
           >
             <Grid item xs={2}>
-              Occupation:
+              Name:
             </Grid>
             <Grid item xs={10}>
               <input
@@ -104,14 +103,13 @@ function InputFormPage() {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setName(e.target.value)
                 }
-                placeholder="Name"
                 value={name?.toString()}
               />
             </Grid>
 
             <br />
 
-            <Grid item xs={2}>
+            {/* <Grid item xs={2}>
               Age:
             </Grid>
             <Grid item xs={10}>
@@ -129,7 +127,7 @@ function InputFormPage() {
                   setAge(e.target.value)
                 }
               />
-            </Grid>
+            </Grid> */}
 
             <br />
 
@@ -170,6 +168,7 @@ function InputFormPage() {
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                   setprojectNames(e.target.value)
                 }
+                placeholder="Comma Seperated"
               >
                 {projectNames}
               </textarea>
