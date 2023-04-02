@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import LandingPage from "./components/LandingPage";
 import InputFormPage from "./components/InputFormPage";
+import LandingPage2 from './components/LandingPage2';
 // import ResultPage from './result_site/src/App'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
@@ -95,7 +96,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <LandingPage />,
+    element: <LandingPage2 />,
   },
 ]);
 
