@@ -25,7 +25,7 @@ const About = ({bioImage="Hello", bioText="World"}) => {
 				exit={{ opacity: 0 }}
 				className="container mx-auto"
 			>
-				<AboutMeBio image={bioImage} text={info.aspiration || state.aspiration || "I have no aspirations"}/>
+				<AboutMeBio image={bioImage} text={(info && info.aspiration) || (state && state.aspiration) || "I have no aspirations."}/>
 			</motion.div>
 
 			{/** Counter without paddings */}

@@ -1,9 +1,14 @@
 import profileImage from '../../images/profile.jpeg';
 import { useContext } from 'react';
 import AboutMeContext from '../../context/AboutMeContext';
+import React from 'react';
+
 
 const AboutMeBio = ({image, text}) => {
 	const { aboutMe } = useContext(AboutMeContext);
+
+	const { state } = React.useLocation(); // state is any or unknown
+	const {info, setInfo} = React.useContext(InfoContext)
 
 	return (
 		<div className="block sm:flex sm:gap-10 mt-10 sm:mt-20">
@@ -22,7 +27,7 @@ const AboutMeBio = ({image, text}) => {
 					</p>
 				))} */}
 				<p className="mb-4 text-ternary-dark dark:text-ternary-light text-lg">
-					{text}
+					{text}{"\n"}{(info && info.summary) || (state && state.summary) || ""}
 				</p>
 			</div>
 		</div>
