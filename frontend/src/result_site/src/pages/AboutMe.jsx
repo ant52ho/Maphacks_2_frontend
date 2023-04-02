@@ -7,9 +7,6 @@ import { useLocation } from "react-router-dom"
 
 const About = ({bioImage="Hello", bioText="World"}) => {
 
-	const { state } = useLocation(); // state is any or unknown
-	console.log(state)
-
 	return (
 		<AboutMeProvider>
 			<motion.div
@@ -18,7 +15,7 @@ const About = ({bioImage="Hello", bioText="World"}) => {
 				exit={{ opacity: 0 }}
 				className="container mx-auto"
 			>
-				<AboutMeBio image={bioImage} text={state.aspiration}/>
+				<AboutMeBio image={bioImage} text={ bioText }/>
 			</motion.div>
 
 			{/** Counter without paddings */}
