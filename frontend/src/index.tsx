@@ -41,14 +41,19 @@ const root = ReactDOM.createRoot(
 const Layout = () => (
 	<>
   <AnimatePresence>
-    
     <div className="bg-secondary-light dark:bg-primary-dark transition duration-300">
       <ScrollToTop />
       <AppHeader />
       <Suspense fallback={""}>
         <Outlet />
       </Suspense>
-      <AppFooter />
+      <AppFooter 
+      // website={"yes"} 
+      github={'yes'} 
+      linkedin={'yes'} 
+      youtube={'yes'} 
+      twitter={"yes"}
+      />
       <UseScrollToTop />
     </div>
   </AnimatePresence>
@@ -64,10 +69,6 @@ const router = createBrowserRouter([
       {
         path: '/page',
         element: <App />
-      },
-      {
-        path: "/form",
-        element: <InputFormPage />
       },
       {
         path: "/home",
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
+  },
+  {
+    path: "/form",
+    element: <InputFormPage />
   },
 ]);
 
