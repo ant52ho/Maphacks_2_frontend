@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import LandingPage from './components/LandingPage';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import LandingPage from "./components/LandingPage";
+import InputFormPage from "./components/InputFormPage";
 // import ResultPage from './result_site/src/App'
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
 
 // Site imports
 import { AnimatePresence } from 'framer-motion';
@@ -20,10 +17,9 @@ import AppHeader from './result_site/src/components/shared/AppHeader';
 import './result_site/src/css/App.css';
 import UseScrollToTop from './result_site/src/hooks/useScrollToTop';
 import './result_site/src/css/main.css';
-import InputFormPage from './components/InputFormPage';
 
 // image imports
-import profileImage from './result_site/src/images/profile.jpeg'
+import profileImage from "./result_site/src/images/profile.jpeg";
 
 
 const About = lazy(() => import('./result_site/src/pages/AboutMe'));
@@ -36,8 +32,6 @@ const ProjectSingle = lazy(() => import('./result_site/src/pages/ProjectSingle.j
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
-
 const Layout = () => (
 	<>
   <AnimatePresence>
@@ -49,10 +43,10 @@ const Layout = () => (
       </Suspense>
       <AppFooter 
       // website={"yes"} 
-      github={'yes'} 
-      linkedin={'yes'} 
-      youtube={'yes'} 
-      twitter={"yes"}
+      // github={'yes'} 
+      // linkedin={'yes'} 
+      // youtube={'yes'} 
+      // twitter={"yes"}
       />
       <UseScrollToTop />
     </div>
@@ -60,37 +54,48 @@ const Layout = () => (
 	</>
 )
 
-
-// 
+//
 const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
       {
-        path: '/page',
-        element: <App />
+        path: "/helloworld",
+        element: <div>Hello World</div>,
+      },
+      {
+        path: "/page",
+        element: <App />,
       },
       {
         path: "/home",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/about",
-        element: <About bioImage={profileImage} bioText={"Hello World!"}/>
+        element: <About bioImage={profileImage} bioText={"Hello World!"} />,
       },
       {
         path: "/contact",
-        element: <Contact />
+        element: <Contact />,
       },
-    ]
+      {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
+        path: "projects/single-project",
+        element: <ProjectSingle />,
+      },
+      {
+        path: "/form",
+        element: <InputFormPage />,
+      },
+    ],
   },
   {
     path: "/",
     element: <LandingPage />,
-  },
-  {
-    path: "/form",
-    element: <InputFormPage />
   },
 ]);
 
