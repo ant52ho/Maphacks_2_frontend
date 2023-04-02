@@ -24,7 +24,7 @@ const Contact = () => {
 		>
 			<ContactForm />
 			<ContactDetails 
-				location = "nowhere" 
+				location = "MapHacks!" 
 				email = {info && info.email || state && state.email || "[Don't email me]"}
 				phone = {info && info.telephone || state && state.telephone || "[Don't call me]"}
 			/>
