@@ -1,13 +1,16 @@
 import profileImage from '../../images/profile.jpeg';
 import { useContext } from 'react';
 import AboutMeContext from '../../context/AboutMeContext';
+import { InfoContext } from '../../../..';
+import { useLocation } from "react-router-dom"
+
 import React from 'react';
 
 
 const AboutMeBio = ({image, text}) => {
 	const { aboutMe } = useContext(AboutMeContext);
 
-	const { state } = React.useLocation(); // state is any or unknown
+	const { state } = useLocation(); // state is any or unknown
 	const {info, setInfo} = React.useContext(InfoContext)
 
 	return (
@@ -26,8 +29,12 @@ const AboutMeBio = ({image, text}) => {
 						{bio.bio}
 					</p>
 				))} */}
+				<br/>
 				<p className="mb-4 text-ternary-dark dark:text-ternary-light text-lg">
-					{text}{"\n"}{(info && info.summary) || (state && state.summary) || ""}
+					{text.trim()}{"."}
+					<br/>
+					<br/>
+					{(info && info.summary) || (state && state.summary) || ""}
 				</p>
 			</div>
 		</div>

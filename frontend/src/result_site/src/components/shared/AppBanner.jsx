@@ -31,8 +31,7 @@ const AppBanner = () => {
 					}}
 					className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
 				>
-					Hi, My name is {(info && info.name) || (state && state.name) || "[I have no name]" } 
-					and I'm {(info && info.age)|| (state && state.name)|| "[I am eternal]"} years old
+					Hi, My name is {(info && info.name) || (state && state.name) || "[I have no name]" } and I'm {(info && info.age)|| (state && state.name)|| "[I am eternal]"} years old
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0 }}

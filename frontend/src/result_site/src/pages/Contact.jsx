@@ -2,10 +2,13 @@ import { motion } from 'framer-motion';
 import ContactDetails from '../components/contact/ContactDetails';
 import ContactForm from '../components/contact/ContactForm';
 import React from 'react';
+import { InfoContext } from '../../..';
+import { useContext } from 'react';
+import { useLocation } from "react-router-dom"
 
 const Contact = () => {
 
-	const { state } = React.useLocation(); // state is any or unknown
+	const { state } = useLocation(); // state is any or unknown
 	const {info, setInfo} = React.useContext(InfoContext)
 
 	return (
