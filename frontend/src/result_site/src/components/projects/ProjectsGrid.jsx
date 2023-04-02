@@ -5,7 +5,8 @@ import { ProjectsContext } from '../../context/ProjectsContext';
 import ProjectsFilter from './ProjectsFilter';
 import WebImage2 from '../../images/web-project-2.jpg';
 import MobileImage2 from '../../images/mobile-project-2.jpg';
-import UIImage1 from '../../images/ui-project-1.jpg';	
+import UIImage1 from '../../images/ui-project-1.jpg';
+import { useLocation } from 'react-router-dom';	
 
 const ProjectsGrid = (props) => {
 	const {
@@ -17,26 +18,45 @@ const ProjectsGrid = (props) => {
 		selectProjectsByCategory,
 	} = useContext(ProjectsContext);
 
-	const projects = [
-		{
-			id: 1,
-			title: 'Ket',
-			category: 'Web Application',
-			img: WebImage2,
-		},
-		{
-			id: 2,
-			title: 'Phoenix Digital Agency',
-			category: 'Mobile Application',
-			img: MobileImage2,
-		},
-		{
-			id: 3,
-			title: 'Project Management UI',
-			category: 'UI/UX Design',
-			img: UIImage1,
-		},
-	];
+	const { state } = useLocation(); // state is any or unknown
+	const {info, setInfo} = React.useContext(InfoContext)
+
+	// const projects = [
+	// 	{
+	// 		id: 1,
+	// 		title: 'Ket',
+	// 		category: 'Web Application',
+	// 		img: WebImage2,
+	// 	},
+	// 	{
+	// 		id: 2,
+	// 		title: 'Phoenix Digital Agency',
+	// 		category: 'Mobile Application',
+	// 		img: MobileImage2,
+	// 	},
+	// 	{
+	// 		id: 3,
+	// 		title: 'Project Management UI',
+	// 		category: 'UI/UX Design',
+	// 		img: UIImage1,
+	// 	},
+	// ];
+
+	let projectNames = (info && info.projects) || (state && state.projects) || null
+	let projectImages = projectNames && (info && info.projectImages) || (state && state.projectImages) || null
+
+	let projects = projectNames && projectImages && projectNames.map(
+		(name, index) => {
+			return {
+				id: index,
+				title: name,
+				category: "Misc. Project",
+				img: projectImages[index].data[0].url,
+			}
+		}
+	)
+
+
 	
 
 	return (
