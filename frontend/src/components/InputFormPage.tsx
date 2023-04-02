@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Component, useState, useEffect} from 'react';
+import { Component, useState, useEffect, useContext} from 'react';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
+import { InfoContext, InfoContextType } from '../index';
 
 function InputFormPage() {
     const [age, setAge] = useState<String>();
@@ -12,6 +13,8 @@ function InputFormPage() {
     const [tel, settel] = useState<String>();
     const [getMessage, setGetMessage] = useState({} as any)
     const navigate = useNavigate()
+
+    const {info, setInfo} = useContext<InfoContextType>(InfoContext)
 
     const submitButton = () =>{
         alert(desc)
@@ -25,6 +28,7 @@ function InputFormPage() {
 
         axios.post('http://localhost:5000/flask/hello', userData).then(response => {
             console.log("POST SUCCESS", response)
+            setInfo(response.data)
             navigate('/home', {state : response.data, replace : false})
           }).catch(error => {
             console.log("ERROR")
