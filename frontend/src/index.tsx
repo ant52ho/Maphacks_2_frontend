@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import LandingPage from './components/LandingPage';
+import LandingPage2 from './components/LandingPage2';
 // import ResultPage from './result_site/src/App'
 import {
   createBrowserRouter,
@@ -86,7 +87,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <LandingPage />,
+    element: <LandingPage2 />,
   },
   {
     path: "/form",
