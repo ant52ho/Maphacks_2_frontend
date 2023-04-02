@@ -4,10 +4,15 @@ import developerLight from '../../images/developer.svg';
 import developerDark from '../../images/developer-dark.svg';
 import { motion } from 'framer-motion';
 import { useLocation } from "react-router-dom"
+import React, { Component, useContext } from 'react';
+import { InfoContext } from '../../../..';
+
 
 const AppBanner = () => {
 	const [activeTheme] = useThemeSwitcher();
 	const { state } = useLocation(); // state is any or unknown
+
+	const {info} = useContext(InfoContext)
 
 	return (
 		<motion.section
@@ -27,7 +32,7 @@ const AppBanner = () => {
 					}}
 					className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
 				>
-					Hi, My name is {state.name} and I'm {state.age} years old
+					Hi, My name is {info.name || state.name || "[I have no name]" } and I'm {info.age || state.age || "[I am eternal]"} years old
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0 }}
