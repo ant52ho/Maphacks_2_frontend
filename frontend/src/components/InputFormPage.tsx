@@ -1,9 +1,11 @@
+import axios from 'axios'
+import { useNavigate } from "react-router-dom"
+import { InfoContext, InfoContextType } from '../index';
 import * as React from "react";
-import { useState } from "react";
+import { Component, useState, useEffect, useContext} from 'react';
 import { Typography, Grid, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import formSidePicture from "../pictures/formSidePicture.png";
-// const formSidePicture = require("../pictures/formSidePicture.png");
 
 console.log(formSidePicture);
 
@@ -31,20 +33,39 @@ const theme = createTheme({
 });
 
 function InputFormPage() {
-  const [age, setAge] = useState<String>();
-  const [name, setName] = useState<String>();
-  const [desc, setDesc] = useState<String>();
-  const [projectNames, setprojectNames] = useState<String>(
-    "comma seperated please"
-  );
-  const [email, setemail] = useState<String>();
-  const [tel, settel] = useState<String>();
+    const [age, setAge] = useState<String>();
+    const [name, setName] = useState<String>();
+    const [desc, setDesc] = useState<String>();
+    const [projectNames, setprojectNames] = useState<String>("comma seperated please");
+    const [email, setemail] = useState<String>();
+    const [tel, settel] = useState<String>();
+    const [getMessage, setGetMessage] = useState({} as any)
+    const navigate = useNavigate()
 
-  const submitButton = () => {
-    alert(desc);
-    //make api call
-    //redirect to generated page
-  };
+    const {info, setInfo} = useContext<InfoContextType>(InfoContext)
+
+    const submitButton = () =>{
+        alert(desc)
+
+        const userData = {
+            name: name,
+            email: email,
+            telephone: tel,
+            projects: projectNames,
+            description: desc
+        };
+
+        //make api call
+        //redirect to generated page
+
+        axios.post('http://localhost:5000/flask/hello', userData).then(response => {
+            console.log("POST SUCCESS", response)
+            setInfo(response.data)
+            navigate('/home', {state : response.data, replace : false})
+          }).catch(error => {
+            console.log("ERROR")
+          })
+    }
 
   return (
     <ThemeProvider theme={theme}>

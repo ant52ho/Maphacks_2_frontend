@@ -3,8 +3,20 @@ import AboutCounter from '../components/about/AboutCounter';
 import AboutClients from '../components/about/AboutClients';
 import { AboutMeProvider } from '../context/AboutMeContext';
 import { motion } from 'framer-motion';
+import { useLocation } from "react-router-dom"
+import { InfoContext } from '../../..';
+
+import React, { Component, useContext} from 'react';
+
 
 const About = ({bioImage="Hello", bioText="World"}) => {
+
+	const { state } = useLocation(); // state is any or unknown
+	console.log(state)
+
+	const {info, setInfo} = useContext(InfoContext)
+	console.log(info, setInfo)
+
 	return (
 		<AboutMeProvider>
 			<motion.div
@@ -13,7 +25,7 @@ const About = ({bioImage="Hello", bioText="World"}) => {
 				exit={{ opacity: 0 }}
 				className="container mx-auto"
 			>
-				<AboutMeBio image={bioImage} text={bioText}/>
+				<AboutMeBio image={bioImage} text={(info && info.aspiration) || (state && state.aspiration) || "I have no aspirations."}/>
 			</motion.div>
 
 			{/** Counter without paddings */}
